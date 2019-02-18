@@ -1,6 +1,6 @@
 ---
 
-- name: Set up /etc/hostname.
+- name: Set up /etc/hostname
   hostname:
     name: "{{ hosts_hostname | default(inventory_hostname_short, true) }}"
 
@@ -9,3 +9,4 @@
     path: /etc/hostname
     owner: root
     group: "{{ hosts_file_group }}"
+

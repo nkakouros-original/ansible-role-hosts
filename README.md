@@ -1,8 +1,10 @@
 Hosts
 =========
 
-This role manages /etc/hosts and /etc/hostname. The files are managed with a
-template.
+This role manages /etc/hosts and /etc/hostname on Linux systems and the
+hostname and C:\Windows\System32\drivers\etc on Windows systems.
+
+This is a fork of https://github.com/ajsalminen/ansible-role-hosts .
 
 Role Variables
 --------------
@@ -33,6 +35,9 @@ hosts_hostname: The hostname that  will be given to the remote target (ie the
 contents of /etc/hostname). If left empty, it defaults to
 `inventory_hostname_short`.
 
+hosts_etc_hosts_template: The template to use to generate the etc/hosts file.
+It defaults to the bundled `hosts.j2` template.
+
 Example Playbook
 ----------------
 
@@ -54,4 +59,5 @@ MIT/Simplified BSD license
 
 Author Information
 ------------------
-Role created by Antti J. Salminen in 2014.
+Fork created by Nikolaos Kakouros.
+Original role created by Antti J. Salminen.

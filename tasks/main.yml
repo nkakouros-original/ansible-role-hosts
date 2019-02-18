@@ -1,9 +1,17 @@
 ---
 # tasks file for hosts
 
-- name: Include OS-specific variables.
+- name: Include OS-specific variables
   include_vars: "{{ ansible_os_family }}.yml"
   when: ansible_os_family == 'FreeBSD'
 
-- include: hostname.yml
-- include: hosts.yml
+- block:
+    - include: linux/hostname.yml
+    - include: linux/hosts.yml
+  when: ansible_os_family != 'Windows'
+
+- block:
+    - include: windows/hostname.yml
+    - include: windows/hosts.yml
+  when: ansible_os_family == 'Windows'
+

@@ -1,4 +1,5 @@
 ---
+
 # defaults file for hosts
 hosts_ipv4_loopback_hosts:
   address: 127.0.0.1
@@ -18,8 +19,10 @@ hosts_default_hosts:
 
 hosts_additional_hosts: []
 
-hosts_all_hosts: "{{ hosts_default_hosts|union(hosts_additional_hosts) }}"
+hosts_all_hosts: "{{ hosts_default_hosts | union(hosts_additional_hosts) }}"
 
 hosts_hostname: ''
 
 hosts_file_group: root
+
+hosts_etc_hosts_template: hosts.j2
