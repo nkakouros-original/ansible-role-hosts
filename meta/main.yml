@@ -44,3 +44,5 @@ galaxy_info:
     - system
 
 dependencies: []
+collections:
+  - ansible.windows
