@@ -6,12 +6,12 @@
   when: ansible_os_family == 'FreeBSD'
 
 - block:
-    - include: linux/hostname.yml
-    - include: linux/hosts.yml
+    - include_tasks: linux/hostname.yml
+    - include_tasks: linux/hosts.yml
   when: ansible_os_family != 'Windows'
 
 - block:
-    - include: windows/hostname.yml
-    - include: windows/hosts.yml
+    - include_tasks: windows/hostname.yml
+    - include_tasks: windows/hosts.yml
   when: ansible_os_family == 'Windows'
 
